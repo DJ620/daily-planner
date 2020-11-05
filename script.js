@@ -2,7 +2,6 @@ console.log(moment().format("dddd, MMMM Do, YYYY"));
 $("document").ready(function() {
     $("#currentDay").text(moment().format("dddd, MMMM Do, YYYY"));
     console.log(moment().get('hour'));
-    console.log(moment().hour().format('hA'));
     for (var i = 0; i < 9; i++) {
         var timeBlock = $("<section>");
         timeBlock.addClass("time-block");
@@ -10,12 +9,18 @@ $("document").ready(function() {
         row.addClass("row");
         var hour = $("<div>");
         hour.addClass("hour");
-        var time = moment().hour(9+i);
+        var current = moment().get('hour');
+        var time = moment().hour(20+i);
+        console.log(moment(time).hour()>current);
         hour.text(time.format('hA'));
-        if (moment().get('hour') > time) {
-            hour.addClass("past");
-        };
         var textarea = $("<textarea>");
+        if (moment(time).isSame(current)) {
+            textarea.addClass("present");
+        } else if (moment(time).isBefore(current)) {
+            textarea.addClass("future");
+        } else {
+            textarea.addClass("past");
+        }
         textarea.attr("rows", "2");
         var save = $("<button>");
         save.addClass("saveBtn fa fa-save");
