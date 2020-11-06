@@ -20,7 +20,7 @@ $("document").ready(function() {
     $("#currentDay").text(today);
     
     for (var i = 0; i < 10; i++) {
-        var time = moment().hour(20 + i);
+        var time = moment().hour(8 + i);
         var current = moment().get('hour');
 
         var timeBlock = $("<section>");
@@ -42,7 +42,6 @@ $("document").ready(function() {
             textarea.addClass("future");
         }
         textarea.attr("rows", "2");
-        textarea.attr("placeholder", "Add Event");
         textarea.attr("id", time.format('h'));
 
         var save = $("<button>");
