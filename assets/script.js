@@ -27,6 +27,7 @@ $("document").ready(function() {
             textarea.addClass("future");
         }
         textarea.attr("rows", "2");
+        textarea.attr("placeholder", "Add Event");
         textarea.attr("id", time.format('h'));
 
         var save = $("<button>");
