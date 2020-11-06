@@ -42,6 +42,7 @@ $("document").ready(function() {
             textarea.addClass("future");
         }
         textarea.attr("rows", "2");
+        textarea.attr("placeholder", "Add Event");
         textarea.attr("id", time.format('h'));
 
         var save = $("<button>");
@@ -61,14 +62,20 @@ $("document").ready(function() {
 
     $(".saveBtn").on("click", function() {
         var hour = $(this).val();
-        var planned = $('#' + hour);
-        if (planned.val()) {
-            savedEntries.push({
-                day: today,
-                hour: hour,
-                scheduled: planned.val()
-            });
+        var planned = $("#" + hour);
+            for (var i = 0; i < savedEntries.length; i++) {
+                if (hour === savedEntries[i].hour) {
+                    console.log("yes");
+                    savedEntries[i].scheduled = planned.val();
+                } else {
+                    savedEntries.push( {
+                        day: today,
+                        hour: hour,
+                        scheduled: planned.val()
+                    });
+                };
+            };
             localStorage.setItem("schedule", JSON.stringify(savedEntries));
-        };
     });
+
 });
