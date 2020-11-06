@@ -52,14 +52,26 @@ textarea{
   color: white;
 }
 
+.past:hover {
+  background-color: #b5b5b5;
+}
+
 .present {
   background-color: #ff6961;
   color: white;
 }
 
+.present:hover {
+  background-color: #e15049;
+}
+
 .future {
   background-color: #77dd77;
   color: white;
+}
+
+.future:hover {
+  background-color: #5cbd5c;
 }
 
 .saveBtn {

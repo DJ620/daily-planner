@@ -20,7 +20,7 @@ $("document").ready(function() {
     $("#currentDay").text(today);
     
     for (var i = 0; i < 10; i++) {
-        var time = moment().hour(8 + i);
+        var time = moment().hour(20 + i);
         var current = moment().get('hour');
 
         var timeBlock = $("<section>");
