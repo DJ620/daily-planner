@@ -1,7 +1,9 @@
-console.log(moment().format("dddd, MMMM Do, YYYY"));
 $("document").ready(function() {
 
-    var today = moment().format("dddd, MMMM Do, YYYY")
+    var today = moment().format("dddd, MMMM Do, YYYY");
+    var savedEntries = [];
+    var checkStorage = JSON.parse(localStorage.getItem("schedule"));
+
     $("#currentDay").text(today);
     
     for (var i = 0; i < 10; i++) {
@@ -41,9 +43,9 @@ $("document").ready(function() {
         $(".container").append(timeBlock);
     }    
 
-    var savedEntries = [];
 
-    var checkStorage = JSON.parse(localStorage.getItem("schedule"));
+
+    
 
     if (checkStorage) {
         checkStorage.forEach(function(entry) {
