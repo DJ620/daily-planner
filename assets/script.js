@@ -14,8 +14,6 @@ $("document").ready(function() {
         console.log(moment(time).hour()>current);
         hour.text(time.format('hA'));
         var textarea = $("<textarea>");
-        console.log(time.get('hour'));
-        console.log(current);
         if (moment(time.get('hour')).isSame(current)) {
             textarea.addClass("present");
         } else if (moment(time.get('hour')).isBefore(current)) {
@@ -32,5 +30,9 @@ $("document").ready(function() {
         timeBlock.append(row);
         $(".container").append(timeBlock);
     }    
+
+    $(".saveBtn").on("click", function() {
+
+    })
 
 });
