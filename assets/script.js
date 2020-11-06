@@ -1,6 +1,8 @@
 console.log(moment().format("dddd, MMMM Do, YYYY"));
 $("document").ready(function() {
-    $("#currentDay").text(moment().format("dddd, MMMM Do, YYYY"));
+
+    var today = moment().format("dddd, MMMM Do, YYYY")
+    $("#currentDay").text(today);
     
     for (var i = 0; i < 10; i++) {
         var time = moment().hour(8 + i);
@@ -40,19 +42,32 @@ $("document").ready(function() {
 
     var savedEntries = [];
 
+    var checkStorage = JSON.parse(localStorage.getItem("schedule"));
+
+    if (checkStorage) {
+        checkStorage.forEach(function(entry) {
+            savedEntries.push(entry);
+        })
+        localStorage.setItem("schedule", JSON.stringify(savedEntries));
+    }
+    
+    savedEntries.forEach(function(entry) {
+        $("#" + entry.hour).val(entry.scheduled);
+    })
+
     $(".saveBtn").on("click", function() {
         var hour = $(this).val();
         var planned = $('#' + hour);
         if (planned.val()) {
             savedEntries.push({
-                day: moment().format("MMM Do YY"),
+                day: today,
                 hour: hour,
                 scheduled: planned.val()
             })
-            
+            localStorage.setItem("schedule", JSON.stringify(savedEntries));
         }
     })
 
-    console.log(moment().format("MMM Do YY"));
+
 
 });
