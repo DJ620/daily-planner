@@ -63,19 +63,20 @@ $("document").ready(function() {
     $(".saveBtn").on("click", function() {
         var hour = $(this).val();
         var planned = $("#" + hour);
-            for (var i = 0; i < savedEntries.length; i++) {
-                if (hour === savedEntries[i].hour) {
-                    console.log("yes");
-                    savedEntries[i].scheduled = planned.val();
-                } else {
-                    savedEntries.push( {
-                        day: today,
-                        hour: hour,
-                        scheduled: planned.val()
-                    });
-                };
+        var flag = "false";
+        for (var i = 0; i < savedEntries.length; i++) {
+            if (savedEntries[i].hour === hour) {
+                flag = "true";
+                savedEntries[i].scheduled = planned.val();
             };
-            localStorage.setItem("schedule", JSON.stringify(savedEntries));
+        };
+        if (flag === "false") {
+            savedEntries.push({
+                day: today,
+                hour: hour,
+                scheduled: planned.val()
+            });
+        };
+        localStorage.setItem("schedule", JSON.stringify(savedEntries));
     });
-
 });
