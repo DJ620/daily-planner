@@ -16,7 +16,7 @@ https://dj620.github.io/plan-your-day-efficiently/
 
 ![Planner screenshot](assets/screenshot.png)
 
-When you get to the page, you will see the current date displayed at the top, and a block to add scheduled events for each hour of the workday. Using Moments.js, the planner will be color-coded based on if the hour of the block has past, is current, or is in the future.
+When you get to the page, you will see the current date displayed at the top, and a block to add scheduled events for each hour of the workday. To add an event, simply click on the box in the appropriate hour block, enter your event, and click the save button. Using Moments.js, the planner will be color-coded based on if the hour of the block has past, is current, or is in the future.
 
 ## Credits
 

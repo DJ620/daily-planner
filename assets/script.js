@@ -56,7 +56,8 @@ $("document").ready(function() {
             textarea.addClass("future");
         };
         var save = $("<button>");
-        save.addClass("saveBtn fa fa-save ");
+        save.addClass("saveBtn fa fa-save");
+        save.text("\nSave");
 
         // This gives each button a value that matches with its corresponding textarea's id
         save.attr("value", time.format('h'));
