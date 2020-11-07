@@ -55,7 +55,6 @@ $("document").ready(function() {
         } else {
             textarea.addClass("future");
         };
-
         var save = $("<button>");
         save.addClass("saveBtn fa fa-save ");
 
@@ -105,8 +104,4 @@ $("document").ready(function() {
         };
         localStorage.setItem("schedule", JSON.stringify(savedEntries));
     });
-
-
-
-
 });
