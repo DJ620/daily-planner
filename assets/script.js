@@ -32,7 +32,7 @@ $("document").ready(function() {
         var row = $("<div>");
         row.addClass("row");
         var hour = $("<div>");
-        hour.addClass("hour");
+        hour.addClass("hour font-weight-bold");
 
         // Sets the text of the hour div to the appropriate hour
         hour.text(time.format('hA'));
