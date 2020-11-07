@@ -40,13 +40,14 @@ textarea{
 }
 
 .hour {
-  background: linear-gradient(45deg,#b9eaed, #6eb8bb);
+  background: linear-gradient(45deg,#75b6b8, #6eb8bb);
   color: #000000;
-  border-top: 2px dashed #000000;
+  border-top: 2px groove #6eb8bb;
   width: 7%;
   padding-top: 5px;
   padding-right: 5px;
   text-align: right;
+  box-shadow: 2px 2px 10px #000000;
 }
 
 .past {
